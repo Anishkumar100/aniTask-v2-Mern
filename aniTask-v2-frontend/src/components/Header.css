@@ -1,0 +1,254 @@
+/* =======================
+   🎨 Theme Variables
+========================== */
+:root {
+  --nav-bg: black;
+  --nav-bg-scrolled: rgba(0, 0, 0, 0.85);
+  --text-color: #fff;
+  --accent-color: #00ffee;
+  background-color: black;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* =======================
+   📌 NavBar
+========================== */
+#navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: var(--nav-bg);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Scrolled navbar */
+#navBar.scrolled {
+  background-color: var(--nav-bg-scrolled);
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.1);
+}
+
+/* Logo styles */
+#navLogo #logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#navLogo:hover #logo {
+  transform: scale(1.05);
+}
+
+/* Nav links */
+.navContents {
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.navContents a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navContents a:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+#navContentDiv {
+  display: flex;
+}
+
+#navContent {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navContents:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =======================
+   🌓 Dark/Light Toggle
+========================== */
+#DarkLightDiv {
+  width: 52px;
+  height: 26px;
+  background: linear-gradient(to right, #222, #555);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#toggleBall {
+  width: 19px;
+  height: 19px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 0 5px #00ffeeaa;
+}
+
+.white-mode #toggleBall {
+  transform: translateX(25px);
+  background: #fff;
+  box-shadow: 0 0 6px #ffffffaa;
+}
+
+/* =======================
+   🔘 Hamburger Menu
+========================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.bar {
+  width: 28px;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.sidebar.open ~ .hamburger .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.sidebar.open ~ .hamburger .bar:nth-child(2) {
+  opacity: 0;
+}
+.sidebar.open ~ .hamburger .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* =======================
+   📚 Sidebar Styles
+========================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  color: white;
+  transition: left 0.4s ease;
+  padding-top: 4rem;
+  z-index: 1000;
+  box-shadow: 4px 0 16px rgba(0, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-links .navContents {
+  font-size: 1.2rem;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-links .navContents:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+/* =======================
+   🌑 Overlay
+========================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+/* =======================
+   🧠 Responsive Design
+========================== */
+@media screen and (max-width: 768px) {
+  #navContentDiv {
+    display: none;
+  }
+
+  #navBar {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+    position: static;
+  }
+
+  #DarkLightDiv {
+    position: static;
+    margin: 0;
+  }
+
+  #darkLightHamburger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0.8rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .sidebar-links {
+    padding-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .sidebar-links .navContents {
+    list-style: none;
+    font-size: 1.1rem;
+  }
+}

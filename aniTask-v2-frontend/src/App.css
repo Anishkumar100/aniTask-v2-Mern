@@ -1,0 +1,15 @@
+/* Apply theme to entire body */
+body {
+
+  color: var(--text-color);
+
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+main
+{
+  background-color: #0a0a0a;
+  min-height:90vh
+}
