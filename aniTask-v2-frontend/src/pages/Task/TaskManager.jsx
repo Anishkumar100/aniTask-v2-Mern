@@ -5,7 +5,7 @@ import { useState, useMemo, useEffect } from "react"
 
 export const TaskManager = () => {
 
-  const [url, setUrl] = useState('https://localhost:8000/todo')
+  const [url, setUrl] = useState('http://localhost:8000/todo')
   const fetchOps = useMemo(() => ({
     method: "GET", 
     headers: { "content-type": "application/json" }
