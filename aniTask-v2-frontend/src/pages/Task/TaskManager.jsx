@@ -5,11 +5,12 @@ import { useState, useMemo, useEffect } from "react"
 
 export const TaskManager = () => {
 
-  const [url, setUrl] = useState('https://anitask-v2-backend.onrender.com/todo')
+  const [url, setUrl] = useState('https://localhost:8000/todo')
   const fetchOps = useMemo(() => ({
-    method: "GET",
+    method: "GET", 
     headers: { "content-type": "application/json" }
   }), []);
+
 
   const { setResult, result, setError, error, loading, setLoading } = useFetch({ url, fetchOps })
 
