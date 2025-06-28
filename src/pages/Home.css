@@ -1,0 +1,310 @@
+.mainWrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.backgroundLightning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.badassTitle {
+  margin: 8rem ;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00aaff;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.scrollDownText p {
+  font-size: 1.3rem;
+  color: #99ccff;
+  font-style: italic;
+  animation: blink 1s step-start infinite;
+  margin-bottom: 3rem;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.funnySection {
+  background: rgba(0, 0, 0, 0.65);
+  border: 2px solid #003355;
+  box-shadow: 0 0 18px #00aaff55;
+  padding: 2.5rem 3rem;
+  border-radius: 14px;
+  max-width: 780px;
+  backdrop-filter: blur(6px);
+  text-align: left;
+  animation: subtleMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes subtleMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(8px); }
+}
+
+.sectionTitle {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+  color: #00e0ff;
+  text-shadow: 0 0 6px #005577;
+  text-align: center;
+}
+
+.funnyList {
+  list-style: none;
+  padding-left: 1.2rem;
+  font-size: 1.18rem;
+  line-height: 2.3;
+  color: #ccf0ff;
+}
+
+.funnyList li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  cursor: default;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.funnyList li::before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00e0ff;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.funnyList li:hover {
+  color: #00ffff;
+  transform: scale(1.05);
+  border-left: 3px solid #00e0ff;
+}
+
+.motivationalNote {
+  margin-top: 1.8rem;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #88ccff;
+  text-align: center;
+}
+
+.todoHint {
+  margin-top: 2.5rem;
+  background: rgba(0, 0, 50, 0.5);
+  padding: 1.8rem 2.5rem;
+  border-radius: 12px;
+  max-width: 700px;
+  font-size: 1.05rem;
+  color: #cceeff;
+  border: 1px solid #005577;
+  box-shadow: 0 0 10px #00aaff33;
+  text-align: left;
+}
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;      /* Max width so it doesn’t get too huge */
+  height: 400px;
+  padding-bottom: 35.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  margin: 0 auto 3rem auto;
+  box-shadow: 0 0 20px #00aaff88;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;   /* Full width of container */
+  height: 100%;  /* Full height of container */
+  border: none;
+  border-radius: 14px;
+}
+
+
+.consequencesTitle {
+  margin-top: 3.5rem;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #00ffff;
+  text-shadow: 0 0 10px #0088aa, 0 0 15px #00ffffbb;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.06em;
+  user-select: none;
+}
+
+.consequencesList {
+  max-width: 780px;
+  margin: 1.5rem auto 5rem auto;
+  padding: 0 1.2rem;
+  list-style: none;
+  font-size: 1.3rem;
+  line-height: 2.1;
+  color: #99e6ff;
+  font-weight: 700;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  border-left: 5px solid #00ffff;
+  background: rgba(0, 30, 50, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffff55;
+  user-select: none;
+}
+
+.consequencesList li {
+  margin-bottom: 1.4rem;
+  padding-left: 3rem;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.consequencesList li:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+.consequencesList li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.8rem;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.consequencesList li:nth-child(odd)::before {
+  content: '✔️';
+  color: #00ffdd;
+}
+
+.consequencesList li:nth-child(even)::before {
+  content: '❌';
+  color: #ff3366;
+}
+
+.consequencesList li:hover::before {
+  transform: scale(1.4) rotate(15deg);
+}
+
+.proceedBtn {
+  background: black;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 114, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 40px auto;
+  display: block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.proceedBtn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  animation: shine 3s infinite linear;
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.proceedBtn:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.9), 0 0 50px rgba(0, 200, 255, 0.3);
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .badassTitle {
+    font-size: 2.2rem;
+    margin: 4rem 0 1.5rem;
+  }
+
+  .scrollDownText p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .funnySection {
+    max-width: 95%;
+    padding: 2rem 1.5rem;
+    font-size: 1rem;
+    animation: none; /* disable subtle move on mobile for performance */
+  }
+
+  .sectionTitle {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .funnyList {
+    padding-left: 1rem;
+    line-height: 2;
+    font-size: 1rem;
+  }
+
+  .videoWrapper
+  {
+    padding-bottom: 56.25%;
+  }
+
+  .funnyList li::before {
+    font-size: 1rem;
+  }
+
+  .todoHint {
+    max-width: 95%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+  }
+}

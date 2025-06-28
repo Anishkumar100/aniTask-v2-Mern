@@ -1,0 +1,16 @@
+{
+  "name": "anitask-v3-backend",
+  "version": "1.0.0",
+  "description": "The backend for aniTask-v3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anish Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0"
+  }
+}
